@@ -1,4 +1,4 @@
-
+import os
 import Objetos
 
 def main():
@@ -35,6 +35,7 @@ def main():
     report = open('reporte.html', 'w')
     report.write(html_string)
     report.close()
+    os.startfile("reporte.html")
 
 
 def rowGenerator(listgiven):
