@@ -17,12 +17,12 @@ def main():
     flag = False
     for each in charlist:
         if inputstring == "__servidor1":
-            estado4(' ')
             flag = True
+            estado4(' ')
             break
         elif inputstring == "3servidor":
-            estado4(' ')
             flag = True
+            estado4(' ')
             break
         else:
             switch(status,each)
