@@ -27,7 +27,7 @@ def main():
         else:
             switch(status,each)
             listposition += 1
-        if listposition+1 == len(charlist):
+        if listposition == len(charlist):
             flag = True     
     if flag == True:
         estado4(' ')
@@ -59,12 +59,10 @@ def estado1(charinput):
 
 def estado2(charinput):
     global status
-    global flag
     if charinput.isalpha():
         status = 2
     elif charinput.isnumeric():
         status = 4
-        flag = True
     else:
         print("Error: "+inputstring+" no es una cadena válida.")
         input("Presione cualquier tecla para continuar..")
@@ -73,10 +71,8 @@ def estado2(charinput):
 
 def estado3(charinput):
     global status
-    global flag
     if charinput.isnumeric():
         status = 4
-        flag = True
     else:
         print("Error: "+inputstring+" no es una cadena válida.")
         input("Presione cualquier tecla para continuar..")
@@ -91,8 +87,13 @@ def estado4(charinput):
         input("Presione cualquier tecla para continuar..")
         os.system('cls')
         main()
-    else:
+    elif charinput.isnumeric():
         status = 4
+    else:
+        print("Error: "+inputstring+" no es una cadena válida.")
+        input("Presione cualquier tecla para continuar..")
+        os.system('cls')
+        main()
     
 
 def switch(arg, charinput):
