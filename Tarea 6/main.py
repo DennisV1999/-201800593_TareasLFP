@@ -31,11 +31,13 @@ def main():
     global breakflag
     charlist = list(entrada)
     for each in charlist:
-        if not each.isspace():
+        if not each.isspace() or status == 8:
             if breakflag == False:
                 switch(status, each)
             else:
                 break
+    if status == 13:
+        estado13()
     
 def estado0(charinput):
     global status
@@ -247,7 +249,7 @@ def estado12(charinput):
         print("Error en "+charinput+" revise que la entrada esté bien escrita.")
         input("Presione cualquier tecla para continuar..")
 
-def estado13(charinput):
+def estado13():
     global tokenlist
     for each in tokenlist:
         print(each)
